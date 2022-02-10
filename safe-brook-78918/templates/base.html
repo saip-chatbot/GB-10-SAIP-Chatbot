@@ -1,0 +1,137 @@
+ <!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SAIP Chatbot</title>
+</head>
+<header>
+    <button id="modeButton" onclick="changeMode()">تغيير الالوان</button>
+    <img src="https://res.cloudinary.com/hz8vycrfk/image/upload/v1638376806/logo_e4f1i1.png" alt="SAIP Chatbot" style="width:7%">
+    <h>SAIP Chatbot</h>
+</header>
+
+<body onload="chatbox.welcome()">
+
+<ul class="uppernav">
+    <li>اتصل بنا </li>
+     <li>بوابة التوظيف </li>
+      <li> المركز الإعلامي </li>
+      <li>الأنظمة واللوائح </li>
+      <li>الخدمات</li>
+     <li><a>الصفحة الرئيسية</a></li>
+        </ul>
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://res.cloudinary.com/hz8vycrfk/image/upload/v1638376818/pic1_jqtxes.png" style="width:60%">
+    <div class="text">تملك علامتك</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://res.cloudinary.com/hz8vycrfk/image/upload/v1638376826/pic2_xgweme.png" style="width:60%">
+    <div class="text">حافظ على حقوقك</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://res.cloudinary.com/hz8vycrfk/image/upload/v1638376832/pic3_brohet.png" style="width:60% ">
+    <div class="text">وثق براءة اختراعك</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+
+<div class="container">
+    <div class="chatbox">
+        <div class="chatbox__support" id="chat">
+            <div class="chatbox__header">
+                <div class="chatbox__image--header">
+                    <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">فريدة</h4>
+                    <input type="image" src="https://res.cloudinary.com/hkwyud1kc/image/upload/v1644322899/letter-x_ei6rpr.png" id="canclbtn" width="20%">
+
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div> 
+                  
+                </div>
+            </div>
+            <div class="chatbox__footer">
+                <input class="space" type="text" id="textbox" placeholder="اكتب هنا">
+                <button id="send" class="send__button">ارسل</button>
+            </div>
+        </div>
+        <div class="chatbox__button" >
+           <input type="image" src="https://res.cloudinary.com/hz8vycrfk/image/upload/v1638376723/chat_qzoz69.png" class="chat-button" id="cb" width="15%">
+        </div>
+    </div>
+</div>
+
+
+</body>
+ <footer>                2021 &copy; SAIP Chatbot  جميع الحقوق محفوظة
+</footer>
+</html>
+
+
+  <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+
+<script>
+function changeMode() {
+var element = document.body;
+element.classList.toggle("dark-mode");
+}
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
