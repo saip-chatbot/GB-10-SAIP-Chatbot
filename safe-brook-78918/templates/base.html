@@ -65,10 +65,12 @@
         <div class="chatbox__support" id="chat">
             <div class="chatbox__header">
                 <div class="chatbox__image--header">
-                    <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                    <img src="https://res.cloudinary.com/hkwyud1kc/image/upload/v1647945418/925025_aouc7h.png" alt="image" width="10%">
+                </div>
+                <div class="chatbox__rate--header">
+
                 </div>
                 <div class="chatbox__content--header">
-                    <h4 class="chatbox__heading--header">فريدة</h4>
                     <input type="image" src="https://res.cloudinary.com/hkwyud1kc/image/upload/v1644322899/letter-x_ei6rpr.png" id="canclbtn" width="20%">
 
                 </div>
@@ -133,5 +135,14 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
+}
+
+function showrate(){
+var rating = '<div class="dropdown"><div class="dropdown-content" id="dropdown-content"><div class="rate"><div style = "text-align:right";> قيم تجربتك معي </div><input type="radio" id="star5" name="rate" value="5" onclick="chatbox.custmerserv(value);"/> <label for="star5" >5 stars</label><input type="radio" id="star4" name="rate" value="4" onclick="chatbox.custmerserv(value);" /><label for="star4" ">4 stars</label><input type="radio" id="star3" name="rate" value="3" onclick="chatbox.custmerserv(value);" /><label for="star3" ">3 stars</label><input type="radio" id="star2" name="rate" value="2" onclick="chatbox.custmerserv(value);" /><label for="star2" >2 stars</label> <input type="radio" id="star1" name="rate" value="1" onclick="chatbox.custmerserv(value);" /><label for="star1" >1 star</label></div></div></div>'
+rating += header.innerHTML;
+header.innerHTML = rating;
+
+document.getElementById("dropdown-content").classList.toggle("show");
+document.getElementById("ratebtn").style.visibility = "hidden";
 }
 </script>
