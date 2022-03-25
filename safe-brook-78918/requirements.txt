@@ -14,3 +14,5 @@ wcwidth==0.2.5
 Werkzeug==2.0.2
 wit==6.0.0
 flask_cors
+pandas
+sklearn
