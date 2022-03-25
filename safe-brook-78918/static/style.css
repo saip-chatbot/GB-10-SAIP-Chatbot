@@ -14,6 +14,21 @@ margin: 0;
 padding: 0;
 }
 
+div#yn {
+  display: flex;
+   flex-direction: column;
+ }
+ 
+ .ynbuttons{
+ background-color: #50BABA;;
+ margin-top: 15px;
+ border-radius: 20px;
+ font-size: 20px;
+ border: none;
+ cursor: pointer;
+ padding: 15px 32px;
+ }
+
 h{
 color: white;
 text-align: left;
@@ -39,8 +54,10 @@ margin-left: 90%;
 }
 
 #canclbtn{
-margin-left: 90%;
-margin-bottom: 90%;
+position: absolute;
+left: 320px;
+top: 20px;
+width: 5%;
 }
 
 .uppernav {
@@ -212,9 +229,48 @@ margin: 7%;
 
 /* HEADER */
 .chatbox__header {
-    position: sticky;
-    top: 0;
-    background: orange;
+    background: #50BABA;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: var(--primaryBoxShadow);
+    height: 60px;
+}
+
+.chatbox__image--header {
+    align: right;
+    position: relative;
+    top: 10px;
+    right: -10px;
+    height: auto;
+    float: none;
+    display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+.chatbox__rate--header{
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.dropdown-content{
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 20px;
+background: #ebebeb;
+opacity: 0.9;
+height: 100px;
+width: 180px;
+}
+
+.dropdown{
+right: 80px;
+
 }
 
 /* MESSAGES */
@@ -403,3 +459,53 @@ position: sticky;
     background-color: #B5D9CB; //rgba(20,105,69,.2);
   }
 }
+
+/*rating stars*/
+.rate {
+    float: left;
+    height: 46px;
+    padding: 10px;
+
+
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.show {display: block;}
